@@ -5,10 +5,18 @@
 $btn-alien-xl-size: 120px;
 $btn-alien-xl-text-size: 60px;
 
+.opacity-0 {
+  opacity: 0 !important;
+}
+
 .btn-alien-group {
   max-width: ($btn-alien-xl-size * 7);
   text-align: center;
   height: 100vh;
+}
+
+.font-FAM-Code {
+  font-family: FAM-Code;
 }
 
 .btn-alien-xl {
@@ -42,12 +50,16 @@ input.form-control-alien, input.form-control-alien:hover {
   letter-spacing: 3px;
 }
 
+.form-control::placeholder {
+  font-family: $font-family-sans-serif;
+}
+
 body {
   &.correcto {
     .access-msg {
       background-color: $primary;
 
-      .form-control {
+      .form-control::placeholder {
         color: #FFF;
       }
     }

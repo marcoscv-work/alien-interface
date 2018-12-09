@@ -21,35 +21,35 @@
         <div class="col-md-7">
           <div class="row mb-4">
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">1</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">1</button>
             </div>
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">2</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">2</button>
             </div>
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">3</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">3</button>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">4</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">4</button>
             </div>
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">5</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">5</button>
             </div>
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">6</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">6</button>
             </div>
           </div>
           <div class="row">
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">7</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">7</button>
             </div>
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">8</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">8</button>
             </div>
             <div class="col-4">
-              <button class="btn btn-alien-xl btn-outline-primary">9</button>
+              <button class="btn btn-alien-xl btn-outline-primary faster">9</button>
             </div>
           </div>
         </div>
@@ -96,7 +96,8 @@
             if (inputNode.val() == 999999) {
               $(".access-msg").animateCss('bounceOut');
               correcto = 1;
-              inputNode.val("CORRECTO");
+              inputNode.attr("placeholder", "CORRECTO");
+              inputNode.val("");
               $(".btn").prop('disabled', true);
               $("body").addClass("correcto");
             } else {
