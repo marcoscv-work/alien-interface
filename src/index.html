@@ -57,7 +57,7 @@
           <div class="border border-primary py-4 mb-auto w-100">
             <h1 class="display-4">LAB 53 alien</h1>
           </div>
-          <div class="border border-primary py-4 w-100">
+          <div class="border border-primary py-4 w-100 access-msg">
             <input class="form-control form-control-lg form-control-alien" type="text" placeholder="PASSWORD">
           </div>
         </div>
@@ -71,6 +71,7 @@
       
         $(".btn").click(function() {
           if (correcto == 0) {
+            $("body").removeClass("incorrecto");
             $(this).animateCss('flip');
       
             var temporal = (inputNode.val() + $(this).html());
@@ -93,12 +94,14 @@
             console.log(inputNode.val());
           } else {
             if (inputNode.val() == 999999) {
-              console.log("bien!");
-              inputNode.val("CORRECTO");
+              $(".access-msg").animateCss('bounceOut');
               correcto = 1;
+              inputNode.val("CORRECTO");
               $(".btn").prop('disabled', true);
+              $("body").addClass("correcto");
             } else {
-              console.log("mal!");
+              $("body").addClass("incorrecto");
+              inputNode.attr("placeholder", "ERROR");
               inputNode.val("");
             }  
           }

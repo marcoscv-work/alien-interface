@@ -26,7 +26,7 @@
       .border.border-primary.py-4.mb-auto.w-100
         h1.display-4
           include _mensaje.txt
-      .border.border-primary.py-4.w-100
+      .border.border-primary.py-4.w-100.access-msg
         input.form-control.form-control-lg.form-control-alien(type='text', placeholder='PASSWORD')
 
 script.
@@ -37,6 +37,7 @@ script.
 
     $(".btn").click(function() {
       if (correcto == 0) {
+        $("body").removeClass("incorrecto");
         $(this).animateCss('flip');
 
         var temporal = (inputNode.val() + $(this).html());
@@ -59,12 +60,14 @@ script.
         console.log(inputNode.val());
       } else {
         if (inputNode.val() == 999999) {
-          console.log("bien!");
-          inputNode.val("CORRECTO");
+          $(".access-msg").animateCss('bounceOut');
           correcto = 1;
+          inputNode.val("CORRECTO");
           $(".btn").prop('disabled', true);
+          $("body").addClass("correcto");
         } else {
-          console.log("mal!");
+          $("body").addClass("incorrecto");
+          inputNode.attr("placeholder", "ERROR");
           inputNode.val("");
         }  
       }

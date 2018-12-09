@@ -42,6 +42,28 @@ input.form-control-alien, input.form-control-alien:hover {
   letter-spacing: 3px;
 }
 
+body {
+  &.correcto {
+    .access-msg {
+      background-color: $primary;
+
+      .form-control {
+        color: #FFF;
+      }
+    }
+  }
+
+  &.incorrecto {
+    .access-msg {
+      background-color: red;
+
+      .form-control::placeholder {
+        color: #FFF;
+      }
+    }
+  }
+}
+
 // loading server mark
 
 div#__bs_notify__ {
