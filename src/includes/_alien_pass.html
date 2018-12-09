@@ -1,0 +1,91 @@
+
+<div class="btn-alien-group container d-flex align-items-center">
+  <div class="row w-100">
+    <div class="col-md-7">
+      <div class="row mb-4">
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">1</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">2</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">3</button>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">4</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">5</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">6</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">7</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">8</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-alien-xl btn-outline-primary">9</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 text-center d-flex align-items-start flex-column">
+      <div class="border border-primary py-4 mb-auto w-100">
+        <h1 class="display-4">LAB 53 alien</h1>
+      </div>
+      <div class="password-block border border-primary py-4 w-100">
+        <input class="form-control form-control-lg form-control-alien" type="text" placeholder="PASSWORD"/>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    var inputNode = $(".form-control-alien");
+    correcto = 0;
+  
+    $(".btn").click(function() {
+      if (correcto == 0) {
+        $(this).animateCss('flip');
+  
+        var temporal = (inputNode.val() + $(this).html());
+  
+        inputNode.val(temporal);
+        inputNode.animateCss('bounceIn');
+  
+        if (navigator.vibrate) {
+            navigator.vibrate(200);
+        } else {
+            console.log("no tienes vibración");
+        }
+  
+        test();
+      }
+    });
+  
+    function test() {
+      if (inputNode.val().length < 6) {
+        console.log(inputNode.val());
+      } else {
+        if (inputNode.val() == 999999) {
+          console.log("bien!");
+          inputNode.val("CORRECTO");
+          correcto = 1;
+          $(".btn").prop('disabled', true);
+          $(".password-block").animateCss('bounceIn');
+        } else {
+          console.log("mal!");
+          inputNode.val("");
+        }  
+      }
+    };
+  });
+</script>

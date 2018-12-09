@@ -1,0 +1,100 @@
+@import "variables";
+
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+$btn-alien-xl-size: 120px;
+$btn-alien-xl-text-size: 60px;
+
+.btn-alien-group {
+  max-width: ($btn-alien-xl-size * 7);
+  text-align: center;
+  height: 100vh;
+}
+
+.btn-alien-xl {
+  width: $btn-alien-xl-size;
+  height: $btn-alien-xl-size;
+  font-size: $btn-alien-xl-text-size;
+
+  &:after {
+    transition: all 0.2s ease;
+    content: '';
+    height: 24px;
+    width: 4px;
+    background-color: $primary;
+    position: absolute;
+    left: calc(50% - 4px);
+    top: calc(100% - 24px);
+    opacity: 0;
+  }
+
+  &:not(.animated):after {
+    opacity: 1;
+  }
+}
+
+input.form-control-alien, input.form-control-alien:hover {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: $primary;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+}
+
+// loading server mark
+
+div#__bs_notify__ {
+  left: 50% !important;
+  top: 50% !important;
+  right: initial !important;
+  position: fixed !important;
+  background-color: $primary !important;
+  border-radius: 50% !important;
+  font-size: 0rem !important;
+  
+  &::before {
+    font-size: 1rem !important;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f1ea";
+  }
+}
+
+// interferencia effect
+
+.interferencia {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right:0;
+    background-image: linear-gradient(
+      rgba(0,0,0,.6) 0px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,.4) 3px
+    );
+    background-size: 100% 4px;
+    animation: .43s interference infinite ease-in-out alternate;  
+      transform-origin:0 0%;
+  }
+
+  @at-root {
+    @keyframes interference {
+      to {
+        transform-origin:0 100%;
+        transform: scale(1.15)
+      }
+    }
+  }
+}
