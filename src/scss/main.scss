@@ -41,13 +41,15 @@ $btn-alien-xl-text-size: 60px;
   }
 }
 
-input.form-control-alien, input.form-control-alien:hover {
-  background-color: transparent;
-  border: none;
-  text-align: center;
-  color: $primary;
-  font-size: 2.2rem;
-  letter-spacing: 3px;
+input.form-control-alien {
+  &, &:hover, &:focus, &:active {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    color: $primary;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
 }
 
 .form-control::placeholder {

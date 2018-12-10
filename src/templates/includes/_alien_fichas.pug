@@ -1,14 +1,28 @@
-.btn-alien-group.container
+.container
+    //enter number
+    .d-flex.align-items-center
+        .row.w-100.vh-100.py-4
+            .my-5.mx-auto.col-md-10.border.border-primary.d-flex.align-items-center.text-center
+                h1.w-100.text-right Número de experimento:
+                input#form-control-alien.w-100.mx-5.form-control.form-control-lg.form-control-alien 
+    //ficha
     .d-flex.align-items-center
         .row.w-100.vh-100.py-4
             .col-md-7.border.border-primary.p-0.overflow-auto
                 nav.nav.nav-pills.flex-column.flex-sm-row
-                    a.flex-sm-fill.text-sm-center.nav-link.active(href='#') FICHA
-                    a.flex-sm-fill.text-sm-center.nav-link(href='#') MULTIMEDIA
-                    a.flex-sm-fill.text-sm-center.nav-link(href='#') IMÁGENES
-                .p-4.pt-4
-                    p.text-left Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni et fugit molestiae, delectus qui dolorem repudiandae possimus adipisci esse quia veniam ducimus assumenda vitae soluta rerum odio fugiat. Rem, fugiat.
-                    p.text-left Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni et fugit molestiae, delectus qui dolorem repudiandae possimus adipisci esse quia veniam ducimus assumenda vitae soluta rerum odio fugiat. Rem, fugiat.
+                    a.flex-sm-fill.text-sm-center.nav-link.active(href='#v-pills-ficha',aria-controls="v-pills-ficha", data-toggle="pill", aria-selected="true") FICHA
+                    a.flex-sm-fill.text-sm-center.nav-link(href='#v-pills-multimedia',aria-controls="v-pills-multimedia", data-toggle="pill", aria-selected="false") MULTIMEDIA
+                    a.flex-sm-fill.text-sm-center.nav-link(href='#v-pills-imagenes',aria-controls="v-pills-imagenes", data-toggle="pill", aria-selected="false") IMÁGENES
+
+                #v-pills-tabContent.tab-content.text-left
+                    #v-pills-ficha.tab-pane.fade.show.active.p-4.pt-4(role='tabpanel')
+                        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor natus sit eveniet? Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum? Aliquid libero expedita tempore quae. Magnam!
+                        p Sit amet consectetur adipisicing elit. Dolor natus sit eveniet? Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum? Aliquid libero expedita tempore quae. Magnam!
+                    #v-pills-multimedia.tab-pane.fade.p-4.pt-4(role='tabpanel')
+                        p Dolor natus sit eveniet? Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum? Aliquid libero expedita tempore quae. Magnam!
+                        p Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum? Aliquid libero expedita tempore quae. Magnam!
+                    #v-pills-imagenes.tab-pane.fade.p-4.pt-4(role='tabpanel') 
+                        p Aliquid libero expedita tempore quae. Magnam! Dolor natus sit eveniet? Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum?
 
             .col-md-5
                 .border.border-primary
@@ -20,22 +34,25 @@
                         h5 Usa los cursores derecha e izquierda
                         span.badge.badge-success.mr-1 <
                         span.badge.badge-success.ml-1 >
+                        h5.mt-3 Pulsa escape para volver
+                        span.badge.badge-success.mr-1 esc
 
 
 script.
-  $(document).ready(function () {
-    var inputNode = $(".form-control-alien");
-    correcto = 0;
+    $(document).ready(function () {
+        inputNodeNumber = $(".form-control-alien");
 
-    $(".btn").click(function() {
-      if (correcto == 0) {
-        $("body").removeClass("incorrecto");
-        $(this).animateCss('flip');
+        setTimeout(function() {
+            $("#form-control-alien").focus()
+        },100)
 
-        var temporal = (inputNode.val() + $(this).html());
+        $(".btn").click(function() {
+            $("body").removeClass("incorrecto");
+            $(this).animateCss('flip');
 
-        inputNode.val(temporal);
-        inputNode.animateCss('bounceIn');
-      }
+            var temporal = (inputNodeNumber.val() + $(this).html());
+
+            inputNodeNumber.val(temporal);
+            inputNodeNumber.animateCss('bounceIn');
+        });
     });
-  });
