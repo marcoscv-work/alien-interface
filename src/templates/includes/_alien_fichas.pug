@@ -1,0 +1,41 @@
+.btn-alien-group.container
+    .d-flex.align-items-center
+        .row.w-100.vh-100.py-4
+            .col-md-7.border.border-primary.p-0.overflow-auto
+                nav.nav.nav-pills.flex-column.flex-sm-row
+                    a.flex-sm-fill.text-sm-center.nav-link.active(href='#') FICHA
+                    a.flex-sm-fill.text-sm-center.nav-link(href='#') MULTIMEDIA
+                    a.flex-sm-fill.text-sm-center.nav-link(href='#') IMÁGENES
+                .p-4.pt-4
+                    p.text-left Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni et fugit molestiae, delectus qui dolorem repudiandae possimus adipisci esse quia veniam ducimus assumenda vitae soluta rerum odio fugiat. Rem, fugiat.
+                    p.text-left Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni et fugit molestiae, delectus qui dolorem repudiandae possimus adipisci esse quia veniam ducimus assumenda vitae soluta rerum odio fugiat. Rem, fugiat.
+
+            .col-md-5
+                .border.border-primary
+                    .py-4.mb-auto.w-100.px-2
+                        h2 Experimento
+                        h2.text-light 2475
+                .border.border-primary.mt-3
+                    .py-4.mb-auto.w-100.px-2
+                        h5 Usa los cursores derecha e izquierda
+                        span.badge.badge-success.mr-1 <
+                        span.badge.badge-success.ml-1 >
+
+
+script.
+  $(document).ready(function () {
+    var inputNode = $(".form-control-alien");
+    correcto = 0;
+
+    $(".btn").click(function() {
+      if (correcto == 0) {
+        $("body").removeClass("incorrecto");
+        $(this).animateCss('flip');
+
+        var temporal = (inputNode.val() + $(this).html());
+
+        inputNode.val(temporal);
+        inputNode.animateCss('bounceIn');
+      }
+    });
+  });

@@ -54,6 +54,18 @@ input.form-control-alien, input.form-control-alien:hover {
   font-family: $font-family-sans-serif;
 }
 
+.vh-100 {
+  height: 100vh;
+}
+
+.overflow-auto {
+  overflow-y: auto;
+}
+
+.nav-pills {
+  border-bottom: 1px solid $primary;
+}
+
 body {
   &.correcto {
     .access-msg {
