@@ -52,10 +52,16 @@
     var inputNode = $(".form-control-alien");
     correcto = 0;
   
+    //Sounds
+    audioBip = new Audio("sound/bip.wav");
+    audioError = new Audio("sound/accessdenied.wav");
+    audioOk = new Audio("sound/completed.wav");
+  
     $(".btn").click(function() {
       if (correcto == 0) {
         $("body").removeClass("incorrecto");
         $(this).animateCss('flip');
+        audioBip.play();
   
         var temporal = (inputNode.val() + $(this).html());
   
@@ -77,6 +83,7 @@
         console.log(inputNode.val());
       } else {
         if (inputNode.val() == 999999) {
+          audioOk.play();
           $(".access-msg").animateCss('bounceOut');
           correcto = 1;
           inputNode.attr("placeholder", "CORRECTO");
@@ -87,6 +94,7 @@
           $("body").addClass("incorrecto");
           inputNode.attr("placeholder", "ERROR");
           inputNode.val("");
+          audioError.play();
         }  
       }
     };

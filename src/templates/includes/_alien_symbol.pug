@@ -33,6 +33,11 @@ script.
     var inputNode = $(".form-control-alien");
     correcto = 0;
 
+    //Sounds
+    audioBip = new Audio("sound/bip.wav");
+    audioError = new Audio("sound/accessdenied.wav");
+    audioOk = new Audio("sound/completed.wav");
+
     $(".btn").click(function() {
       if (correcto == 0) {
         $("body").removeClass("incorrecto");
@@ -50,6 +55,7 @@ script.
         animAndHide($(this));
 
         var temporal = (inputNode.val() + $(this).html());
+        audioBip.play();
 
         inputNode.val(temporal);
         inputNode.animateCss('bounceIn');
@@ -69,6 +75,7 @@ script.
         console.log(inputNode.val());
       } else {
         if (inputNode.val() == '8v9r67eP') {
+            audioOk.play();
             correcto = 1;
             inputNode.attr("placeholder", "CORRECTO");
             inputNode.val("");
@@ -82,6 +89,7 @@ script.
             $(".btn").prop('disabled', false);
             inputNode.attr("placeholder", "ERROR");
             inputNode.val("");
+            audioError.play();
         }  
       }
     };
