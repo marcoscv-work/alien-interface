@@ -9,10 +9,18 @@ $btn-alien-xl-text-size: 60px;
   opacity: 0 !important;
 }
 
+.hide {
+  display: none !important;
+} 
+
 .btn-alien-group {
   max-width: ($btn-alien-xl-size * 7);
   text-align: center;
   height: 100vh;
+}
+
+.modal-header {
+  border-bottom: 1px solid $primary;
 }
 
 .font-FAM-Code {
@@ -42,7 +50,7 @@ $btn-alien-xl-text-size: 60px;
 }
 
 input.form-control-alien {
-  &, &:hover, &:focus, &:active {
+  &, &:hover, &:focus, &:active, &:disabled {
     background-color: transparent;
     border: none;
     text-align: center;
