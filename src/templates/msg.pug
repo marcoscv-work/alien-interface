@@ -1,0 +1,39 @@
+doctype
+html
+    head
+        meta(charset='utf-8')
+        title Alien template
+        meta(content='initial-scale=0.5, width=400, height=700' name='viewport')
+        // STYLES
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/animate.min.css')
+        link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')
+        link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')
+    body.vh-100(style='background-color:#192C11;cursor:none;')
+        // SCRIPTS
+
+        script(src='js/jquery.min.js' charset='utf-8')
+        script(src='js/popper.min.js' charset='utf-8')
+        script(src='js/bootstrap.min.js' charset='utf-8')
+        script(src='js/main.js' charset='utf-8')
+
+        video(width='800' height='250' loop='' controls='none' autoplay='' style='pointer-events: none;')
+            source(src='videoLo.mp4' type='video/mp4')
+
+        p.h1.p-5 Aquí va la pista que te damos porque eres un paquete
+
+        //include includes/_msg.pug
+
+        script.
+            var elem = document.getElementById("myvideo");
+            function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+            }
