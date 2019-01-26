@@ -5,6 +5,14 @@
 $btn-alien-xl-size: 120px;
 $btn-alien-xl-text-size: 60px;
 
+.container-800-480 {
+  max-width: 800px;
+  height: 480px;
+  overflow: hidden;
+  border: 1px solid $primary;
+  cursor: none;
+}
+
 .opacity-0 {
   opacity: 0 !important;
 }
