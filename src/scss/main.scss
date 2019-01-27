@@ -5,12 +5,15 @@
 $btn-alien-xl-size: 120px;
 $btn-alien-xl-text-size: 60px;
 
+.cursor-none {
+  cursor: none;
+}
+
 .container-800-480 {
   max-width: 800px;
   height: 480px;
   overflow: hidden;
   border: 1px solid $primary;
-  cursor: none;
 }
 
 .opacity-0 {
@@ -33,6 +36,14 @@ $btn-alien-xl-text-size: 60px;
 
 .font-FAM-Code {
   font-family: FAM-Code;
+}
+
+.font-DJBGetDigital {
+  font-family: DJBGetDigital;
+}
+
+.font-Xolonium {
+  font-family: Xolonium;
 }
 
 .btn-alien-xl {

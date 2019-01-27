@@ -1,6 +1,6 @@
 
-<div class="btn-alien-group container d-flex align-items-center">
-  <div class="row w-100">
+<div class="container-800-480 container d-flex align-items-center">
+  <div class="row">
     <div class="col-md-7">
       <div class="row mb-4">
         <div class="col-4">
@@ -38,7 +38,9 @@
     </div>
     <div class="col-md-5 text-center d-flex align-items-start flex-column">
       <div class="border border-primary py-4 mb-auto w-100">
-        <h1 class="display-4">LAB 53 alien</h1>
+        <h1>1. Validación primer paso <strong class="mt-4 d-block">PASSWORD</strong>
+          <!--include _mensaje.txt-->
+        </h1>
       </div>
       <div class="border border-primary py-4 w-100 access-msg">
         <input class="form-control form-control-lg form-control-alien" type="text" placeholder="PASSWORD"/>
@@ -95,7 +97,7 @@
           inputNode.attr("placeholder", "ERROR");
           inputNode.val("");
           audioError.play();
-        }  
+        }
       }
     };
   });

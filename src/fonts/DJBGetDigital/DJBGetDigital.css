@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'DJBGetDigital';
+    src: url('DJBGetDigital.eot');
+    src: url('DJBGetDigital.eot?#iefix') format('embedded-opentype'),
+        url('DJBGetDigital.woff2') format('woff2'),
+        url('DJBGetDigital.woff') format('woff'),
+        url('DJBGetDigital.svg#DJBGetDigital') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

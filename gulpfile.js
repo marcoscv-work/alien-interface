@@ -2,6 +2,12 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const pug = require('gulp-pug');
+const ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./src')
+    .pipe(ghPages());
+});
 
 // compile custom SCSS files
 gulp.task('sass', () => {
@@ -11,11 +17,10 @@ gulp.task('sass', () => {
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(gulp.dest('src/css'))
   .pipe(browserSync.stream());
-  
 });
 
 // pug build pages
-gulp.task('pug', function() {  
+gulp.task('pug', function() {
   return gulp.src('src/templates/**/*.pug')
   .pipe(pug({
     pretty: true,
@@ -45,14 +50,12 @@ gulp.task('css', () => {
   .pipe(browserSync.stream());
 });
 
-
-
 // init develop Server
 gulp.task('serve', ['sass','js','css','pug'], () => {
   browserSync.init({
     server: './src'
   });
-  
+
   gulp.watch(['src/templates/**/*.pug','src/templates/**/*.txt'], ['pug']);
   gulp.watch(['src/scss/*.scss'], ['sass']);
   gulp.watch('src/**/*').on('change',

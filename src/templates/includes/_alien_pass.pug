@@ -1,5 +1,5 @@
-.btn-alien-group.container.d-flex.align-items-center
-  .row.w-100
+.container-800-480.container.d-flex.align-items-center
+  .row
     .col-md-7
       .row.mb-4
         .col-4
@@ -24,8 +24,9 @@
           button.btn.btn-alien-xl.btn-outline-primary.faster 9
     .col-md-5.text-center.d-flex.align-items-start.flex-column
       .border.border-primary.py-4.mb-auto.w-100
-        h1.display-4
-          include _mensaje.txt
+        h1 1. Validación primer paso 
+          strong.mt-4.d-block PASSWORD
+          //include _mensaje.txt
       .border.border-primary.py-4.w-100.access-msg
         input.form-control.form-control-lg.form-control-alien(type='text', placeholder='PASSWORD')
 
@@ -78,7 +79,7 @@ script.
           inputNode.attr("placeholder", "ERROR");
           inputNode.val("");
           audioError.play();
-        }  
+        }
       }
     };
   });
