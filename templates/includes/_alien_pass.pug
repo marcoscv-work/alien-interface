@@ -1,0 +1,85 @@
+.container-800-480.container.d-flex.align-items-center
+  .row
+    .col-md-7
+      .row.mb-4
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 1
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 2
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 3
+      .row.mb-4
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 4
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 5
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 6
+      .row
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 7
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 8
+        .col-4
+          button.btn.btn-alien-xl.btn-outline-primary.faster 9
+    .col-md-5.text-center.d-flex.align-items-start.flex-column
+      .border.border-primary.py-4.mb-auto.w-100
+        h1 1. Validación primer paso 
+          strong.mt-4.d-block PASSWORD
+          //include _mensaje.txt
+      .border.border-primary.py-4.w-100.access-msg
+        input.form-control.form-control-lg.form-control-alien(type='text', placeholder='PASSWORD')
+
+script.
+  $(document).ready(function () {
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    var inputNode = $(".form-control-alien");
+    correcto = 0;
+
+    //Sounds
+    audioBip = new Audio("sound/bip.wav");
+    audioError = new Audio("sound/accessdenied.wav");
+    audioOk = new Audio("sound/completed.wav");
+
+    $(".btn").click(function() {
+      if (correcto == 0) {
+        $("body").removeClass("incorrecto");
+        $(this).animateCss('flip');
+        audioBip.play();
+
+        var temporal = (inputNode.val() + $(this).html());
+
+        inputNode.val(temporal);
+        inputNode.animateCss('bounceIn');
+
+        if (navigator.vibrate) {
+            navigator.vibrate(200);
+        } else {
+            console.log("no tienes vibración");
+        }
+
+        test();
+      }
+    });
+
+    function test() {
+      if (inputNode.val().length < 6) {
+        console.log(inputNode.val());
+      } else {
+        if (inputNode.val() == 999999) {
+          audioOk.play();
+          $(".access-msg").animateCss('bounceOut');
+          correcto = 1;
+          inputNode.attr("placeholder", "CORRECTO");
+          inputNode.val("");
+          $(".btn").prop('disabled', true);
+          $("body").addClass("correcto");
+        } else {
+          $("body").addClass("incorrecto");
+          inputNode.attr("placeholder", "ERROR");
+          inputNode.val("");
+          audioError.play();
+        }
+      }
+    };
+  });

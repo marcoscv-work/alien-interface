@@ -1,0 +1,36 @@
+doctype
+html
+    head
+        meta(charset='utf-8')
+        title Alien template
+        meta(content='initial-scale=0.5, width=400, height=700' name='viewport')
+        // STYLES
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/animate.min.css')
+        link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')
+        link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')
+        link(rel='stylesheet' href='fonts/Xolonium/Xolonium.css')
+        link(rel='stylesheet' href='fonts/DJBGetDigital/DJBGetDigital.css')
+    body
+        // SCRIPTS
+
+        script(src='js/jquery.min.js' charset='utf-8')
+        script(src='js/popper.min.js' charset='utf-8')
+        script(src='js/bootstrap.min.js' charset='utf-8')
+        script(src='js/main.js' charset='utf-8')
+
+        //video(width='800' height='250' loop='' controls='none' autoplay='' style='pointer-events: none;')
+            //source(src='videoLo.mp4' type='video/mp4')
+
+        div.container.container-800-480
+            div.row
+                p.h1.p-5.text-center.w-100 Introduce coordenadas de orientación de Antena
+
+                div.border.border-primary.py-4.col-4.m-3.ml-auto
+                    input.form-control.form-control-lg.form-control-alien(type="text", placeholder="456.353", maxlength=7)
+                div.border.border-primary.py-4.col-4.m-3.mr-auto
+                    input.form-control.form-control-lg.form-control-alien(type="text", placeholder="765.372", maxlength=7)
+
+                p.h1.p-5.text-center.w-100 PULSA ENTER
+
+        //include includes/_x.pug
