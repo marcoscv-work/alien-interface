@@ -4,8 +4,8 @@ const sass = require('gulp-sass');
 const pug = require('gulp-pug');
 const ghPages = require('gulp-gh-pages');
 
-gulp.task('deploy', function() {
-  return gulp.src('./src')
+gulp.task('deploy', () => {
+  return gulp.src('./src/**/*')
     .pipe(ghPages());
 });
 
