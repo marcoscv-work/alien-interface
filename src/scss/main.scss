@@ -50,9 +50,10 @@ $btn-alien-xl-text-size: 60px;
   width: $btn-alien-xl-size;
   height: $btn-alien-xl-size;
   font-size: $btn-alien-xl-text-size;
+  transition: none;
 
   &:after {
-    transition: all 0.2s ease;
+    // transition: all 0.2s ease;
     content: '';
     height: 24px;
     width: 4px;
@@ -110,8 +111,12 @@ body {
     .access-msg {
       background-color: red;
 
-      .form-control::placeholder {
+      .form-control {
         color: #FFF;
+
+        &::placeholder {
+          color: #FFF;
+        }
       }
     }
   }
@@ -127,13 +132,44 @@ div#__bs_notify__ {
   background-color: $primary !important;
   border-radius: 50% !important;
   font-size: 0rem !important;
-  
+
   &::before {
     font-size: 1rem !important;
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
     content: "\f1ea";
   }
+}
+
+// Animate CSS
+
+@keyframes triki {
+  from, 5%, 15%, 25%, 35%, 45% {
+    background-color: $primary;
+    color: #FFF;
+  }
+
+  1%, 10%, 20%, 30%, 40%, 50%, to {
+    background-color: $secondary;
+  }
+}
+
+@keyframes triki2 {
+  from, to, 5%, 15% {
+    color: #FFF;
+  }
+
+  1%, 10%, 20%  {
+    color: $primary;
+  }
+}
+
+.animated.triki {
+  animation-name: triki;
+}
+
+.animated.triki2 {
+  animation-name: triki2;
 }
 
 // interferencia effect
@@ -160,7 +196,7 @@ div#__bs_notify__ {
       rgba(0,0,0,.4) 3px
     );
     background-size: 100% 4px;
-    animation: .43s interference infinite ease-in-out alternate;  
+    animation: .43s interference infinite ease-in-out alternate;
       transform-origin:0 0%;
   }
 
