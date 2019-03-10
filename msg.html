@@ -17,11 +17,11 @@
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <div class="container container-800-480 p-0">
-      <video width="800" height="250" loop="" controls="none" autoplay="" style="pointer-events: none;">
+      <video class="p-4" width="800" height="250" loop="" controls="none" autoplay="" style="pointer-events: none;">
         <source src="videoLo.mp4" type="video/mp4">
       </video>
       <!--img(src='videoLo.gif')-->
-      <p class="h1 px-4 pt-2 text-center" id="maquina"></p>
+      <p class="h1 px-5 text-center" id="maquina"></p>
       <script>
         function maquina(texto, intervalo) {
             longitud = texto.length;
@@ -64,17 +64,13 @@
             };
         
         var texto = "Aquí va la pista TAMAÑO MEDIO que te damos porque eres un paquete, probamos otra línea más y más y más líneas";
-        var intervalo = 40;
+        var intervalo = 100;
         
         maquina(texto, intervalo);
         
         setTimeout(function(){
-            maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 30);
-        }, 7000);
-        
-        setTimeout(function(){
-            maquina('Aquí va la pista PEQUEÑA con texto enorme', 60);
-        }, 14000);
+            maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 80);
+        }, 15000);
       </script>
     </div>
   </head>

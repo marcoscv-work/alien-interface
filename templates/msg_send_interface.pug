@@ -1,0 +1,137 @@
+doctype
+html
+    head
+        meta(charset='utf-8')
+        title Menssge sender
+        meta(content='initial-scale=0.5, width=400, height=700' name='viewport')
+        // STYLES
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet' href='css/animate.min.css')
+        //link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')
+        //link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')
+        link(rel='stylesheet' href='fonts/Xolonium/Xolonium.css')
+        link(rel='stylesheet' href='fonts/DJBGetDigital/DJBGetDigital.css')
+
+        // SCRIPTS
+
+        script(src='js/jquery.min.js' charset='utf-8')
+        script(src='js/popper.min.js' charset='utf-8')
+        script(src='js/bootstrap.min.js' charset='utf-8')
+        script(src='js/main.js' charset='utf-8')
+
+        .container.pb-5.DJBGetDigital
+            h1.text-center.my-3.text-white MSG SENDER INTERFACE
+            .row
+                .col-md-8
+                    .form-group.text-white
+                        label(for="msgSend") MENSAJE
+                        span.small.ml-3.caracteres 0
+                        span.small.ml-1 caracteres
+                        .form-inline.row
+                            .form-group.col-12.col-sm-7.col-md-8.col-lg-9.pr-md-0
+                                textarea#msgSend(rows="4").msgSend.form-control.w-100
+                            .form-group.col-sm-5.col-md-4.col-lg-3.text-center
+                                .btn.btn-primary.btn-block.btn-lg.py-3 ENVIAR
+                                .d-flex.mt-2.w-100
+                                    .btn.btn-danger.btn-sm.mr-2.remove-text X
+                                    .btn.btn-warning.btn-sm.flex-fill GUARDAR
+                    .form-group
+                        label(for="msgSend") MENSAJES GUARDADOS
+                        .bg-white
+                            ul.list-group.list-group-flush.list-group-alien
+                                li.list-group-item
+                                    span fdsfdsfdsfds
+                                    .btn-group
+                                        button.btn.btn-sm.btn-danger X
+                                        button.btn.btn-sm.btn-warning EDITAR
+                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                li.list-group-item
+                                    span Dapibus ac facilisis in
+                                    .btn-group
+                                        button.btn.btn-sm.btn-danger X
+                                        button.btn.btn-sm.btn-warning EDITAR
+                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                li.list-group-item
+                                    span Morbi leo risus
+                                    .btn-group
+                                        button.btn.btn-sm.btn-danger X
+                                        button.btn.btn-sm.btn-warning EDITAR
+                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                li.list-group-item
+                                    span Porta ac consectetur ac
+                                    .btn-group
+                                        button.btn.btn-sm.btn-danger X
+                                        button.btn.btn-sm.btn-warning EDITAR
+                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                li.list-group-item
+                                    span Vestibulum at eros
+                                    .btn-group
+                                        button.btn.btn-sm.btn-danger X
+                                        button.btn.btn-sm.btn-warning EDITAR
+                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+
+                .col-md-4.mt-4
+                    .position-relative
+                        img(src="images/tablet.png").img-fluid
+                        span#copyMsg.copyMsg.position-absolute.small.text-center.text-break
+                    .row.mt-4
+                        .col-6
+                            button.btn.btn-primary.btn-block.btn-lg.py-3 SONIDO
+                        .col-6
+                            button.btn.btn-primary.btn-block.btn-lg.py-3 LUCES
+            .row
+                .col-md-12
+                    .form-group.text-white
+                        span IMAGEN DEL RADAR
+
+            select#radarImages.form-control.col-md-6
+                option Radar bucle normal
+                option Radar detectando 1 alien
+                option Radar stop
+                option Radar detecta muchos alien
+
+            // Modal
+            #editModal.modal.fade(tabindex='-1')
+                .modal-dialog(role='document')
+                    .modal-content
+                        .modal-header
+                            h5#editModalLabel.modal-title EDITAR MENSAJE
+                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                        .modal-body
+                            textarea#msgEdit(rows="4").msgEdit.form-control
+                        .modal-footer
+                            button.btn.btn-secondary(type='button' data-dismiss='modal') CERRAR
+                            button.btn.btn-primary(type='button') SALVAR CAMBIOS
+
+        script.
+            // Sincroniza la preview en tablet y el número de cracteres
+            function msgRefresh() {
+                $(".copyMsg").text($(".msgSend").val());
+                $(".caracteres").text($(".msgSend").val().length);
+            }
+
+            $(".msgSend").on('change keyup paste', function() {
+                msgRefresh();
+            });
+
+            $(".remove-text").on('click', function() {
+                $(".msgSend").val('');
+                msgRefresh();
+            });
+
+            // Listado de mensajes guardados
+
+            //botón enviar
+            $(".list-group-alien .btn-primary").on('click', function() {
+                var text = $(".list-group-alien .list-group-item:hover span").text();
+                $(".msgSend").val(text);
+                msgRefresh();
+            });
+
+            //botón editar > abre modal con edición
+            $(".list-group-alien .btn-warning").on('click', function() {
+                var text = $(".list-group-alien .list-group-item:hover span").text();
+                $(".msgEdit").val(text);
+                $('#editModal').modal('show');
+            });
