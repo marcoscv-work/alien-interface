@@ -7,7 +7,7 @@ html
         // STYLES
         link(rel='stylesheet' href='css/main.css')
         link(rel='stylesheet' href='css/animate.min.css')
-        //link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')
+        link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')
         //link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')
         link(rel='stylesheet' href='fonts/Xolonium/Xolonium.css')
         link(rel='stylesheet' href='fonts/DJBGetDigital/DJBGetDigital.css')
@@ -21,6 +21,8 @@ html
 
         .container.pb-5.DJBGetDigital
             h1.text-center.my-3.text-white MSG SENDER INTERFACE
+                a.btn.btn-outline-primary.btn-sm.float-right.mt-2
+                    i.fas.fa-cog.text-white
             .row
                 .col-md-8
                     .form-group.text-white
@@ -31,44 +33,65 @@ html
                             .form-group.col-12.col-sm-7.col-md-8.col-lg-9.pr-md-0
                                 textarea#msgSend(rows="4").msgSend.form-control.w-100
                             .form-group.col-sm-5.col-md-4.col-lg-3.text-center
-                                .btn.btn-primary.btn-block.btn-lg.py-3 ENVIAR
+                                .btn.btn-primary.btn-block.btn-lg.py-3
+                                    i.far.fa-share-square.d-none.d-xl-inline
+                                    span.ml-lg-2 ENVIAR
                                 .d-flex.mt-2.w-100
-                                    .btn.btn-danger.btn-sm.mr-2.remove-text X
+                                    .btn.btn-danger.btn-sm.mr-2.remove-text
+                                        i.far.fa-trash-alt
                                     .btn.btn-warning.btn-sm.flex-fill GUARDAR
                     .form-group
                         label(for="msgSend") MENSAJES GUARDADOS
                         .bg-white
                             ul.list-group.list-group-flush.list-group-alien
                                 li.list-group-item
-                                    span fdsfdsfdsfds
+                                    span Lorem ipsum dolor sit amet consectetur adipisicing elit
                                     .btn-group
-                                        button.btn.btn-sm.btn-danger X
-                                        button.btn.btn-sm.btn-warning EDITAR
-                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                        button.btn.btn-sm.btn-danger
+                                            i.far.fa-trash-alt
+                                        button.btn.btn-sm.btn-warning
+                                            i.far.fa-edit
+                                        button.btn.btn-sm.btn-primary.px-4 ENVIAR
                                 li.list-group-item
-                                    span Dapibus ac facilisis in
+                                    span Vel, nostrum nobis rem consequuntur impedit expedita delectus
                                     .btn-group
-                                        button.btn.btn-sm.btn-danger X
-                                        button.btn.btn-sm.btn-warning EDITAR
-                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                        button.btn.btn-sm.btn-danger
+                                            i.far.fa-trash-alt
+                                        button.btn.btn-sm.btn-warning
+                                            i.far.fa-edit
+                                        button.btn.btn-sm.btn-primary.px-4 ENVIAR
                                 li.list-group-item
-                                    span Morbi leo risus
+                                    span Corrupti quis voluptatibus! Vero possimus aspernatur numquam
                                     .btn-group
-                                        button.btn.btn-sm.btn-danger X
-                                        button.btn.btn-sm.btn-warning EDITAR
-                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                        button.btn.btn-sm.btn-danger
+                                            i.far.fa-trash-alt
+                                        button.btn.btn-sm.btn-warning
+                                            i.far.fa-edit
+                                        button.btn.btn-sm.btn-primary.px-4 ENVIAR
                                 li.list-group-item
-                                    span Porta ac consectetur ac
+                                    span Deserunt odio error libero. Eligendi, quos odio!
                                     .btn-group
-                                        button.btn.btn-sm.btn-danger X
-                                        button.btn.btn-sm.btn-warning EDITAR
-                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                        button.btn.btn-sm.btn-danger
+                                            i.far.fa-trash-alt
+                                        button.btn.btn-sm.btn-warning
+                                            i.far.fa-edit
+                                        button.btn.btn-sm.btn-primary.px-4 ENVIAR
                                 li.list-group-item
-                                    span Vestibulum at eros
+                                    span Quaerat odit quidem nemo obcaecati ipsa optio iure?
                                     .btn-group
-                                        button.btn.btn-sm.btn-danger X
-                                        button.btn.btn-sm.btn-warning EDITAR
-                                        button.btn.btn-sm.btn-primary.px-5 ENVIAR
+                                        button.btn.btn-sm.btn-danger
+                                            i.far.fa-trash-alt
+                                        button.btn.btn-sm.btn-warning
+                                            i.far.fa-edit
+                                        button.btn.btn-sm.btn-primary.px-4 ENVIAR
+                                li.list-group-item
+                                    span Odit quidem nemo obcaecati ipsa optio iure?
+                                    .btn-group
+                                        button.btn.btn-sm.btn-danger
+                                            i.far.fa-trash-alt
+                                        button.btn.btn-sm.btn-warning
+                                            i.far.fa-edit
+                                        button.btn.btn-sm.btn-primary.px-4 ENVIAR
 
                 .col-md-4.mt-4
                     .position-relative
@@ -76,19 +99,22 @@ html
                         span#copyMsg.copyMsg.position-absolute.small.text-center.text-break
                     .row.mt-4
                         .col-6
-                            button.btn.btn-primary.btn-block.btn-lg.py-3 SONIDO
+                            button.btn.btn-primary.btn-block.btn-sm.py-2
+                                i.fas.fa-volume-up.d-none.d-lg-inline
+                                span.ml-lg-2 SONIDO
                         .col-6
-                            button.btn.btn-primary.btn-block.btn-lg.py-3 LUCES
-            .row
-                .col-md-12
-                    .form-group.text-white
-                        span IMAGEN DEL RADAR
-
-            select#radarImages.form-control.col-md-6
-                option Radar bucle normal
-                option Radar detectando 1 alien
-                option Radar stop
-                option Radar detecta muchos alien
+                            button.btn.btn-primary.btn-block.btn-sm.py-2
+                                i.fas.fa-lightbulb.d-none.d-lg-inline
+                                span.ml-lg-2 LUCES
+                    .row.mt-4
+                        .col-md-12
+                            .form-group.text-white
+                                span IMAGEN DEL RADAR
+                                select#radarImages.mt-2.form-control.form-control-sm.col-md-12
+                                    option Radar bucle normal
+                                    option Radar detectando 1 alien
+                                    option Radar stop
+                                    option Radar detecta muchos alien
 
             // Modal
             #editModal.modal.fade(tabindex='-1')
