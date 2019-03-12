@@ -1,0 +1,50 @@
+// Sprites animations
+
+$a01-fames: 65;
+$a01-height: 250px;
+$a01-width: 800px;
+
+.a01 {
+	height: $a01-height;
+	width: $a01-width;
+	background: url('../images/alien_radar_sprite_00.png') no-repeat;
+    animation: a01-animation 3s steps($a01-fames, end) infinite;
+    transform: scale3d(0.9,0.9,1);
+}
+
+@keyframes a01-animation {
+  to {
+    background-position-y: -($a01-height * $a01-fames);
+  }
+}
+
+// Animate CSS
+
+@keyframes triki {
+    from, 5%, 15%, 25%, 35%, 45% {
+      background-color: $primary;
+      color: #FFF;
+    }
+
+    1%, 10%, 20%, 30%, 40%, 50%, to {
+      background-color: $secondary;
+    }
+  }
+
+@keyframes triki2 {
+    from, to, 5%, 15% {
+        color: #FFF;
+    }
+
+    1%, 10%, 20%  {
+        color: $primary;
+    }
+}
+
+.animated.triki {
+    animation-name: triki;
+}
+
+.animated.triki2 {
+    animation-name: triki2;
+}

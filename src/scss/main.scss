@@ -2,6 +2,8 @@
 
 @import "./node_modules/bootstrap/scss/bootstrap";
 
+@import "animations";
+
 $btn-alien-xl-size: 120px;
 $btn-alien-xl-text-size: 60px;
 
@@ -143,37 +145,6 @@ div#__bs_notify__ {
     font-weight: 400;
     content: "\f1ea";
   }
-}
-
-// Animate CSS
-
-@keyframes triki {
-  from, 5%, 15%, 25%, 35%, 45% {
-    background-color: $primary;
-    color: #FFF;
-  }
-
-  1%, 10%, 20%, 30%, 40%, 50%, to {
-    background-color: $secondary;
-  }
-}
-
-@keyframes triki2 {
-  from, to, 5%, 15% {
-    color: #FFF;
-  }
-
-  1%, 10%, 20%  {
-    color: $primary;
-  }
-}
-
-.animated.triki {
-  animation-name: triki;
-}
-
-.animated.triki2 {
-  animation-name: triki2;
 }
 
 .copyMsg {
