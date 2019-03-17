@@ -21,15 +21,15 @@ $a01-width: 800px;
 // Animate CSS
 
 @keyframes triki {
-    from, 5%, 15%, 25%, 35%, 45% {
-      background-color: $primary;
-      color: #FFF;
+    from, 5%, 25% {
+        background-color: $primary;
+        color: #FFF;
     }
 
-    1%, 10%, 20%, 30%, 40%, 50%, to {
-      background-color: $secondary;
+    1%, 10%, 40%, to {
+        background-color: $secondary;
     }
-  }
+}
 
 @keyframes triki2 {
     from, to, 5%, 15% {
@@ -41,10 +41,28 @@ $a01-width: 800px;
     }
 }
 
+@keyframes trikiMsg {
+    from, 5%, 15% {
+        color: #FFF;
+    }
+
+    1%, 10%, 16%  {
+        color: $primary;
+    }
+}
+
 .animated.triki {
     animation-name: triki;
+    animation-timing-function: steps(6, end);
 }
 
 .animated.triki2 {
     animation-name: triki2;
+    animation-timing-function: steps(6, end);
+}
+
+.animated.trikiMsg {
+    animation-name: trikiMsg;
+    animation-timing-function: steps(4, end);
+    animation-duration: 2s;
 }
