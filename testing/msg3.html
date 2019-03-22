@@ -17,27 +17,12 @@
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <div class="container container-800-480 p-0">
-      <video id="videoSin" width="800" height="480" loop="" controls="none" autoplay="">
-        <source src="videos/sin_v01.mp4" type="video/mp4">
-      </video>
-      <video class="p-2 hide" id="videoRadar" width="800" height="250" loop="" controls="none" autoplay="" style="pointer-events: none;">
-        <source src="videos/videoLo.mp4" type="video/mp4">
-      </video>
-      <p class="hide h1 px-5 text-center" id="maquina"></p>
+      <div class="a01 mx-auto" style="width:315px;animation-duration:4.5s;transform: scale3d(1,1,1);background: url(../images/alien_radar_sprite_01.png) no-repeat;"></div>
+      <div class="d-flex align-items-center" style="height:228px">
+        <p class="h1 w-100 px-5 mb-0 text-center" id="maquina"></p>
+      </div>
       <script>
-        function quitarVideoSin() {
-            $('#maquina').removeClass('hide');
-            $('#videoRadar').removeClass('hide');
-            //$('#videoSin').addClass('hide');
-            $('#videoSin').remove();
-        }
-        
-        $('#videoSin').click(function() {
-            quitarVideoSin();
-            maquina(texto, intervalo);
-        });
-        
-        function maquina(texto, intervalo) {
+        function maquina(texto) {
             longitud = texto.length;
         
             //Adaptamos tamaño de texto según longitud de mensaje
@@ -59,35 +44,23 @@
             }
         
             nodo =  $('#maquina')[0];
-            nodo.innerHTML = "";
-        
-            var i = 0;
-            // Creamos el timer
-            timer = setInterval(function(){
-            // Vamos añadiendo letra por letra y la _ al final.
-            nodo.innerHTML = nodo.innerHTML.substr(0,nodo.innerHTML.length-1) + texto.charAt(i) + " ";
-        
-            if (i >= longitud){
-                clearInterval(timer);
-                // Salimos del Timer y quitamos la barra baja (_)
-                //nodo.innerHTML = nodo.innerHTML.substr(0,longitud);
-                return true;
-            } else {
-                i++;
-                }},intervalo);
-            };
+            nodo.innerHTML = texto;
+            $('#maquina').animateCss('trikiMsg');
+        }
         
         var texto = "Aquí va la pista TAMAÑO MEDIO que te damos porque eres un paquete, probamos otra línea más y más y más líneas";
-        var intervalo = 30;
         
         setTimeout(function(){
-            quitarVideoSin();
-            maquina(texto, intervalo);
-        }, 10000);
+            maquina(texto);
+        }, 2000);
         
         setTimeout(function(){
-            maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 50);
-        }, 20000);
+            maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete');
+        }, 7000);
+        
+        setTimeout(function(){
+            maquina('Aquí va la pista PEQUEÑA en texto pequeño');
+        }, 12000);
       </script>
     </div>
   </head>

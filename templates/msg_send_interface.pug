@@ -21,7 +21,7 @@ html
 
         .container.pb-5.DJBGetDigital
             h1.text-center.my-3.text-white MSG SENDER INTERFACE
-                a.btn.btn-outline-primary.btn-sm.float-right.mt-2
+                a.btn.btn-outline-primary.btn-sm.float-right.mt-2#configuracion(title='Configuración')
                     i.fas.fa-cog.text-white
             .row
                 .col-md-8
@@ -116,19 +116,45 @@ html
                                     option Radar stop
                                     option Radar detecta muchos alien
 
-            // Modal
-            #editModal.modal.fade(tabindex='-1')
-                .modal-dialog(role='document')
-                    .modal-content
-                        .modal-header
-                            h5#editModalLabel.modal-title EDITAR MENSAJE
-                            button.close(type='button' data-dismiss='modal' aria-label='Close')
-                                span(aria-hidden='true') &times;
-                        .modal-body
-                            textarea#msgEdit(rows="4").msgEdit.form-control
-                        .modal-footer
-                            button.btn.btn-secondary(type='button' data-dismiss='modal') CERRAR
-                            button.btn.btn-primary(type='button') SALVAR CAMBIOS
+        // Modal
+        #editModal.modal.fade(tabindex='-1')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        h5#editModalLabel.modal-title EDITAR MENSAJE
+                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                            span(aria-hidden='true') &times;
+                    .modal-body
+                        textarea#msgEdit(rows="4").msgEdit.form-control
+                    .modal-footer
+                        button.btn.btn-secondary(type='button' data-dismiss='modal') CERRAR
+                        button.btn.btn-primary(type='button') SALVAR CAMBIOS
+
+        #modalConfiguracion.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-dialog-centered.modal-lg(role='document')
+                .modal-content
+                    .modal-header
+                        h1#exampleModalLabel.modal-title Configuración
+                        button.close.text-primary(type='button' data-dismiss='modal' aria-label='Close')
+                            span(aria-hidden='true') &times;
+                    .modal-body
+                        h2.h3 DATOS DE SERVIDOR:
+
+                        label(for='IP') ID de dipositivo 1 que recibe notificaciones
+                        .form-row
+                            .col-7.col-md-3
+                                input.form-control#IP(type='text' placeholder='192.168.x.xx')
+                            .col.col-md-2
+                                input.form-control(type='text' placeholder='2xxx')
+                        label.mt-4(for='IP') ID de dipositivo 2 que recibe notificaciones
+                        .form-row
+                            .col-7.col-md-3
+                                input.form-control#IP(type='text' placeholder='192.168.x.xx')
+                            .col.col-md-2
+                                input.form-control(type='text' placeholder='2xxx')
+                    .modal-footer
+                        button.btn.btn-secondary(type='button' data-dismiss='modal') CERRAR
+                        button.btn.btn-primary(type='button') SALVAR CAMBIOS
 
         script.
             // Sincroniza la preview en tablet y el número de cracteres
@@ -160,4 +186,9 @@ html
                 var text = $(".list-group-alien .list-group-item:hover span").text();
                 $(".msgEdit").val(text);
                 $('#editModal').modal('show');
+            });
+
+            //Configuración
+            $("#configuracion").on('click', function() {
+                $('#modalConfiguracion').modal('show');
             });

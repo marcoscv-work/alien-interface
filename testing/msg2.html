@@ -17,26 +17,9 @@
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <div class="container container-800-480 p-0">
-      <video id="videoSin" width="800" height="480" loop="" controls="none" autoplay="">
-        <source src="videos/sin_v01.mp4" type="video/mp4">
-      </video>
-      <video class="p-2 hide" id="videoRadar" width="800" height="250" loop="" controls="none" autoplay="" style="pointer-events: none;">
-        <source src="videos/videoLo.mp4" type="video/mp4">
-      </video>
-      <p class="hide h1 px-5 text-center" id="maquina"></p>
+      <div class="a01"></div>
+      <p class="h1 px-5 text-center" id="maquina"></p>
       <script>
-        function quitarVideoSin() {
-            $('#maquina').removeClass('hide');
-            $('#videoRadar').removeClass('hide');
-            //$('#videoSin').addClass('hide');
-            $('#videoSin').remove();
-        }
-        
-        $('#videoSin').click(function() {
-            quitarVideoSin();
-            maquina(texto, intervalo);
-        });
-        
         function maquina(texto, intervalo) {
             longitud = texto.length;
         
@@ -78,16 +61,13 @@
             };
         
         var texto = "Aquí va la pista TAMAÑO MEDIO que te damos porque eres un paquete, probamos otra línea más y más y más líneas";
-        var intervalo = 30;
+        var intervalo = 100;
+        
+        maquina(texto, intervalo);
         
         setTimeout(function(){
-            quitarVideoSin();
-            maquina(texto, intervalo);
-        }, 10000);
-        
-        setTimeout(function(){
-            maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 50);
-        }, 20000);
+            maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 80);
+        }, 15000);
       </script>
     </div>
   </head>
