@@ -20,14 +20,26 @@ html
         script(src='js/main.js' charset='utf-8')
 
         .container.container-800-480.p-0
-            video.p-4(width='800' height='250' loop='' controls='none' autoplay='' style='pointer-events: none;')
-                source(src='videoLo.mp4' type='video/mp4')
+            video#videoSin(width='800' height='480' loop='' controls='none' autoplay='')
+                source(src='videos/sin_v01.mp4' type='video/mp4')
+            video.p-2.hide#videoRadar(width='800' height='250' loop='' controls='none' autoplay='' style='pointer-events: none;')
+                source(src='videos/videoLo.mp4' type='video/mp4')
 
-            //img(src='videoLo.gif')
-
-            p.h1.px-5.text-center#maquina
+            p.hide.h1.px-5.text-center#maquina
 
             script.
+                function quitarVideoSin() {
+                    $('#maquina').removeClass('hide');
+                    $('#videoRadar').removeClass('hide');
+                    //$('#videoSin').addClass('hide');
+                    $('#videoSin').remove();
+                }
+
+                $('#videoSin').click(function() {
+                    quitarVideoSin();
+                    maquina(texto, intervalo);
+                });
+
                 function maquina(texto, intervalo) {
                     longitud = texto.length;
 
@@ -69,11 +81,14 @@ html
                     };
 
                 var texto = "Aquí va la pista TAMAÑO MEDIO que te damos porque eres un paquete, probamos otra línea más y más y más líneas";
-                var intervalo = 100;
-
-                maquina(texto, intervalo);
+                var intervalo = 30;
 
                 setTimeout(function(){
-                    maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 80);
-                }, 15000);
+                    quitarVideoSin();
+                    maquina(texto, intervalo);
+                }, 10000);
+
+                setTimeout(function(){
+                    maquina('Aquí va la pista LAAARGA en texto pequeño y que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete. Aquí va la pista que te damos porque eres un paquete', 50);
+                }, 20000);
 
