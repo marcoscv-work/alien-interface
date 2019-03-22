@@ -17,7 +17,7 @@
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <div class="container pb-5 DJBGetDigital">
-      <h1 class="text-center my-3 text-white">MSG SENDER INTERFACE<a class="btn btn-outline-primary btn-sm float-right mt-2"><i class="fas fa-cog text-white"></i></a></h1>
+      <h1 class="text-center my-3 text-white">MSG SENDER INTERFACE<a class="btn btn-outline-primary btn-sm float-right mt-2" id="configuracion" title="Configuración"><i class="fas fa-cog text-white"></i></a></h1>
       <div class="row">
         <div class="col-md-8">
           <div class="form-group text-white">
@@ -109,21 +109,56 @@
           </div>
         </div>
       </div>
-      <!-- Modal-->
-      <div class="modal fade" id="editModal" tabindex="-1">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="editModalLabel">EDITAR MENSAJE</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade" id="editModal" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">EDITAR MENSAJE</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <textarea class="msgEdit form-control" id="msgEdit" rows="4"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">CERRAR</button>
+            <button class="btn btn-primary" type="button">SALVAR CAMBIOS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalConfiguracion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel">Configuración</h1>
+            <button class="close text-primary" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="h3">DATOS DE SERVIDOR:</h2>
+            <label for="IP">ID de dipositivo 1 que recibe notificaciones</label>
+            <div class="form-row">
+              <div class="col-7 col-md-3">
+                <input class="form-control" id="IP" type="text" placeholder="192.168.x.xx">
+              </div>
+              <div class="col col-md-2">
+                <input class="form-control" type="text" placeholder="2xxx">
+              </div>
             </div>
-            <div class="modal-body">
-              <textarea class="msgEdit form-control" id="msgEdit" rows="4"></textarea>
+            <label class="mt-4" for="IP">ID de dipositivo 2 que recibe notificaciones</label>
+            <div class="form-row">
+              <div class="col-7 col-md-3">
+                <input class="form-control" id="IP" type="text" placeholder="192.168.x.xx">
+              </div>
+              <div class="col col-md-2">
+                <input class="form-control" type="text" placeholder="2xxx">
+              </div>
             </div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">CERRAR</button>
-              <button class="btn btn-primary" type="button">SALVAR CAMBIOS</button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">CERRAR</button>
+            <button class="btn btn-primary" type="button">SALVAR CAMBIOS</button>
           </div>
         </div>
       </div>
@@ -158,6 +193,11 @@
           var text = $(".list-group-alien .list-group-item:hover span").text();
           $(".msgEdit").val(text);
           $('#editModal').modal('show');
+      });
+      
+      //Configuración
+      $("#configuracion").on('click', function() {
+          $('#modalConfiguracion').modal('show');
       });
     </script>
   </head>
