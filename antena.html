@@ -24,16 +24,60 @@
     -->
     <div class="container container-800-480">
       <div class="row">
-        <p class="h1 p-5 text-center w-100">Introduce coordenadas de orientación de Antena</p>
-        <div class="border border-primary py-4 col-4 m-3 ml-auto">
-          <input class="form-control form-control-lg form-control-alien" type="text" placeholder="456.353" maxlength="7">
+        <p class="h1 m-0 p-3 text-center w-100">Introduce coordenadas de orientación de Antena</p>
+        <div class="py-2 col-4 ml-auto">
+          <label class="small text-primary">LONGITUD</label>
+          <input class="big border border-primary form-control form-control-alien" type="text" placeholder="456.353" maxlength="7" data-maxlength="7" autofocus>
         </div>
-        <div class="border border-primary py-4 col-4 m-3 mr-auto">
-          <input class="form-control form-control-lg form-control-alien" type="text" placeholder="765.372" maxlength="7">
+        <div class="py-2 col-4 mr-auto">
+          <label class="small text-primary">LATITUD</label>
+          <input class="big border border-primary form-control form-control-alien" type="text" placeholder="765.372" maxlength="7" data-maxlength="7">
         </div>
-        <p class="h1 p-5 text-center w-100">PULSA ENTER</p>
+      </div>
+      <div class="row">
+        <div class="py-2 col-4 ml-auto">
+          <label class="small text-primary">ACIMUT</label>
+          <input class="big border border-primary form-control form-control-alien" type="text" placeholder="456.353" maxlength="7" data-maxlength="7">
+        </div>
+        <div class="py-2 col-4 mr-auto">
+          <label class="small text-primary">ELEVACIÓN</label>
+          <input class="big border border-primary form-control form-control-alien" type="text" placeholder="765.372" maxlength="7" data-maxlength="7">
+        </div>
+        <p class="h1 p-3 text-center w-100">PULSA ENTER</p>
       </div>
     </div>
-    <!--include includes/_x.pug-->
+    <script>
+      formsNode = $(".form-control-alien");
+      indexTotal = formsNode.length;
+      
+      formsNode.keyup(function(e) {
+          var code = e.which;
+          var $this = $(this);
+          var indexThis = formsNode.index(this);
+      
+          if ($this.val().length >= $this.data("maxlength") && code != 8) {
+              if ($this.val().length > $this.data("maxlength")) {
+                  $this.val($this.val().substring(0,4));
+              }
+      
+              if ((indexTotal-1) != indexThis) {
+                  formsNode[(indexThis+1)].focus();
+                  console.log("next");
+              } else {
+                   formsNode[0].focus();
+              }
+          }
+      
+          if ($this.val().length == 0 && code == 8) {
+              if (indexThis != 0) {
+                  formsNode[(indexThis-1)].focus();
+                  console.log("next");
+              } else {
+                  formsNode[(indexTotal-1)].focus();
+              }
+              console.log("prev");
+          }
+       });
+    </script>
   </body>
 </html>
