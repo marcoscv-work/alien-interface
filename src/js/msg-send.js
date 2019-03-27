@@ -44,5 +44,6 @@ var saveIPs = async function() {
     var IP1 = $("#IP1").val();
     var port1 = $("#port1").val();
     console.log('IP DEL SERVER: '+HTTP+IP1+':'+port1);
-    const Client = await ClueClient.connect(HTTP+IP1+':'+port1);
+
+    Client = await ClueClient.connect(HTTP+IP1+':'+port1);
 }
