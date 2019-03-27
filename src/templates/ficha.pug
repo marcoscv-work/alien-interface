@@ -19,6 +19,56 @@ html
         script(src='js/bootstrap.min.js' charset='utf-8')
         script(src='js/main.js' charset='utf-8')
 
-        include includes/_alien_fichas.pug
+        .container
+            //enter number
+            .enter-number.d-flex.align-items-center
+                .row.w-100.vh-100.py-4
+                    .my-5.mx-auto.col-md-10.border.border-primary.d-flex.align-items-center.text-center
+                        h1.w-100.text-right Número de experimento:
+                        input#form-control-alien.w-100.mx-5.form-control.form-control-lg.form-control-alien(autofocus)
+            //ficha
+            .ficha.d-flex.align-items-center.hide
+                .row.w-100.vh-100.py-4
+                    .col-md-7.border.border-primary.p-0.overflow-auto
+                        nav.nav.nav-pills.flex-column.flex-sm-row
+                            a.flex-sm-fill.text-sm-center.nav-link.nav-link-1.active(href='#v-pills-ficha',aria-controls="v-pills-ficha", data-toggle="pill", aria-selected="true") FICHA
+                            a.flex-sm-fill.text-sm-center.nav-link.nav-link-2(href='#v-pills-multimedia',aria-controls="v-pills-multimedia", data-toggle="pill", aria-selected="false") MULTIMEDIA
+                            a.flex-sm-fill.text-sm-center.nav-link.nav-link-3(href='#v-pills-imagenes',aria-controls="v-pills-imagenes", data-toggle="pill", aria-selected="false") IMÁGENES
 
-        //.interferencia
+                        #v-pills-tabContent.tab-content.text-left
+                            #v-pills-ficha.tab-pane.fade.show.active.p-4.pt-4(role='tabpanel')
+                                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor natus sit eveniet? Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum? Aliquid libero expedita tempore quae. Magnam!
+                                p Sit amet consectetur adipisicing elit. Dolor natus sit eveniet? Facilis minus eaque ipsum ab voluptatum magnam quisquam, quasi nam quis illum? Aliquid libero expedita tempore quae. Magnam!
+                            #v-pills-multimedia.tab-pane.fade.p-4.pt-4(role='tabpanel')
+                                h2.text-center NO DATA
+                            #v-pills-imagenes.tab-pane.fade.p-4.pt-4(role='tabpanel') 
+                                p Imagen de archivo 0004w200
+                                img.img-fluid.w-100.p-2.p-md-4.border.border-primary(src='images/abraza_01.jpg')
+                                //img.img-fluid.w-100.p-2.p-md-4.border.border-primary(src='images/xenomorfo_01.jpg')
+
+                    .col-md-5
+                        .border.border-primary
+                            .py-4.mb-auto.w-100.px-2.px-md-4
+                                h2 Experimento
+                                h2.text-light 2475
+                        .border.border-primary.mt-3
+                            .py-4.mb-auto.w-100.px-2.px-md-4
+                                h5 Usa los cursores derecha e izquierda
+                                span.badge.badge-success.mr-1 <
+                                span.badge.badge-success.ml-1 >
+                                h5.mt-3 Pulsa escape para volver
+                                span.badge.badge-success.mr-1 esc
+
+        #modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-dialog-centered(role='document')
+                .modal-content.bg-secondary.text-primary
+                    .modal-header
+                        h5#exampleModalLabel.modal-title Experiment
+                        button.close.text-primary(type='button' data-dismiss='modal' aria-label='Close')
+                        span(aria-hidden='true') &times;
+                    .modal-body
+                            h2 This experiment number does not exist
+                            h5.mt-3 Pulsa escape para volver 
+                                span.badge.badge-success.mr-1 esc
+
+        script(src='js/games/ficha.js' charset='utf-8')
