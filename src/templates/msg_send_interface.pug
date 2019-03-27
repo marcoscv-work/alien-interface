@@ -18,6 +18,7 @@ html
         script(src='js/popper.min.js' charset='utf-8')
         script(src='js/bootstrap.min.js' charset='utf-8')
         script(src='js/main.js' charset='utf-8')
+        script(src='js/clue-client.js' charset='utf-8')
 
         .container.pb-5.DJBGetDigital
             h1.text-center.my-3.text-white MSG SENDER INTERFACE
@@ -142,53 +143,22 @@ html
 
                         label(for='IP') ID de dipositivo 1 que recibe notificaciones
                         .form-row
-                            .col-7.col-md-3
-                                input.form-control#IP(type='text' placeholder='192.168.x.xx')
                             .col.col-md-2
-                                input.form-control(type='text' placeholder='2xxx')
-                        label.mt-4(for='IP') ID de dipositivo 2 que recibe notificaciones
-                        .form-row
+                                input.form-control#HTTP1(type='text' placeholder='http://' value='http://')
                             .col-7.col-md-3
-                                input.form-control#IP(type='text' placeholder='192.168.x.xx')
+                                input.form-control#IP1(type='text' placeholder='192.168.x.xx' value='192.168.1.151')
                             .col.col-md-2
-                                input.form-control(type='text' placeholder='2xxx')
+                                input.form-control#port1(type='text' placeholder='3000' value='8001')
+                        //- label.mt-4(for='IP') ID de dipositivo 2 que recibe notificaciones
+                        //- .form-row
+                        //-     .col.col-md-2
+                        //-         input.form-control#HTTP1(type='text' placeholder='http://' value='http://')
+                        //-     .col-7.col-md-3
+                        //-         input.form-control#IP2(type='text' placeholder='192.168.x.xx')
+                        //-     .col.col-md-2
+                        //-         input.form-control#port2(type='text' placeholder='8001')
                     .modal-footer
                         button.btn.btn-secondary(type='button' data-dismiss='modal') CERRAR
-                        button.btn.btn-primary(type='button') SALVAR CAMBIOS
+                        button.btn.btn-primary#configuracionSave(type='button') SALVAR CAMBIOS
 
-        script.
-            // Sincroniza la preview en tablet y el número de cracteres
-            function msgRefresh() {
-                $(".copyMsg").text($(".msgSend").val());
-                $(".caracteres").text($(".msgSend").val().length);
-            }
-
-            $(".msgSend").on('change keyup paste', function() {
-                msgRefresh();
-            });
-
-            $(".remove-text").on('click', function() {
-                $(".msgSend").val('');
-                msgRefresh();
-            });
-
-            // Listado de mensajes guardados
-
-            //botón enviar
-            $(".list-group-alien .btn-primary").on('click', function() {
-                var text = $(".list-group-alien .list-group-item:hover span").text();
-                $(".msgSend").val(text);
-                msgRefresh();
-            });
-
-            //botón editar > abre modal con edición
-            $(".list-group-alien .btn-warning").on('click', function() {
-                var text = $(".list-group-alien .list-group-item:hover span").text();
-                $(".msgEdit").val(text);
-                $('#editModal').modal('show');
-            });
-
-            //Configuración
-            $("#configuracion").on('click', function() {
-                $('#modalConfiguracion').modal('show');
-            });
+        script(src='js/msg-send.js' charset='utf-8')

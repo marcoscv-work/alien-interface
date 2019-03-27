@@ -16,6 +16,7 @@
     <script src="js/popper.min.js" charset="utf-8"></script>
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/clue-client.js" charset="utf-8"></script>
     <div class="container pb-5 DJBGetDigital">
       <h1 class="text-center my-3 text-white">MSG SENDER INTERFACE<a class="btn btn-outline-primary btn-sm float-right mt-2" id="configuracion" title="Configuración"><i class="fas fa-cog text-white"></i></a></h1>
       <div class="row">
@@ -139,66 +140,24 @@
             <h2 class="h3">DATOS DE SERVIDOR:</h2>
             <label for="IP">ID de dipositivo 1 que recibe notificaciones</label>
             <div class="form-row">
+              <div class="col col-md-2">
+                <input class="form-control" id="HTTP1" type="text" placeholder="http://" value="http://">
+              </div>
               <div class="col-7 col-md-3">
-                <input class="form-control" id="IP" type="text" placeholder="192.168.x.xx">
+                <input class="form-control" id="IP1" type="text" placeholder="192.168.x.xx" value="192.168.1.151">
               </div>
               <div class="col col-md-2">
-                <input class="form-control" type="text" placeholder="2xxx">
-              </div>
-            </div>
-            <label class="mt-4" for="IP">ID de dipositivo 2 que recibe notificaciones</label>
-            <div class="form-row">
-              <div class="col-7 col-md-3">
-                <input class="form-control" id="IP" type="text" placeholder="192.168.x.xx">
-              </div>
-              <div class="col col-md-2">
-                <input class="form-control" type="text" placeholder="2xxx">
+                <input class="form-control" id="port1" type="text" placeholder="3000" value="8001">
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">CERRAR</button>
-            <button class="btn btn-primary" type="button">SALVAR CAMBIOS</button>
+            <button class="btn btn-primary" id="configuracionSave" type="button">SALVAR CAMBIOS</button>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      // Sincroniza la preview en tablet y el número de cracteres
-      function msgRefresh() {
-          $(".copyMsg").text($(".msgSend").val());
-          $(".caracteres").text($(".msgSend").val().length);
-      }
-      
-      $(".msgSend").on('change keyup paste', function() {
-          msgRefresh();
-      });
-      
-      $(".remove-text").on('click', function() {
-          $(".msgSend").val('');
-          msgRefresh();
-      });
-      
-      // Listado de mensajes guardados
-      
-      //botón enviar
-      $(".list-group-alien .btn-primary").on('click', function() {
-          var text = $(".list-group-alien .list-group-item:hover span").text();
-          $(".msgSend").val(text);
-          msgRefresh();
-      });
-      
-      //botón editar > abre modal con edición
-      $(".list-group-alien .btn-warning").on('click', function() {
-          var text = $(".list-group-alien .list-group-item:hover span").text();
-          $(".msgEdit").val(text);
-          $('#editModal').modal('show');
-      });
-      
-      //Configuración
-      $("#configuracion").on('click', function() {
-          $('#modalConfiguracion').modal('show');
-      });
-    </script>
+    <script src="js/msg-send.js" charset="utf-8"></script>
   </head>
 </html>
