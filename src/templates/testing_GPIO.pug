@@ -6,7 +6,7 @@ html
         meta(content='initial-scale=1' name='viewport')
         // STYLES
         link(rel='stylesheet' href='css/main.css')
-        //link(rel='stylesheet' href='css/animate.min.css')
+        link(rel='stylesheet' href='css/animate.min.css')
         //link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')
         //link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')
         //link(rel='stylesheet' href='fonts/Xolonium/Xolonium.css')
@@ -18,45 +18,75 @@ html
         script(src='js/popper.min.js' charset='utf-8')
         script(src='js/bootstrap.min.js' charset='utf-8')
         script(src='js/main.js' charset='utf-8')
-        script(src='js/clue-client.js' charset='utf-8')
 
         .container.pb-5.DJBGetDigital
             h1.text-center.my-3.text-white PIO TESTER
 
-            .row.border.border-primary.p-4.position-relative
-                h2.h4 iteration 01
-                button.btn.btn-primary.btn-sm.position-absolute.left-0.p-1(style="right:-5px;top:-5px;") +
+            .row.border.border-primary.p-4
+                h2.h4 iteration
 
                 .form-group.col-12.border.border-primary.p-3
                     label.text-left Message
                     textarea(rows="2").msgSend.form-control.w-100
 
                 .col-12.form-group
-                    .row.border.border-primary.p-4.position-relative
-                        .col-2.col-lg-3.pl-0
+                    .row.border.border-primary.p-3.position-relative
+                        .col-6.col-lg-3.pl-0
                             label.text-left Variable
-                            input(type="text", placesholder="Video").form-control
-                        .col-2.col-lg-3.pl-0
+                            input(type="text", placeholder="Video").form-control
+                        .col-6.col-lg-3.pl-0
                             label.text-left Valor
-                            input(type="text", placesholder="video4.avi").form-control
+                            input(type="text", placeholder="video4.avi").form-control
 
                 .col-12.form-group
-                    .row.border.border-primary.p-4.position-relative
-                        button.btn.btn-primary.btn-sm.position-absolute.left-0.p-1(style="right:-5px;top:-5px;") +
+                    .row.border.border-primary.position-relative.mb-3.px-3.pt-3
+                        button#copyPio.btn.btn-primary.btn-add.btn-sm.position-absolute.left-0.p-1(style="right:-20px;top:-2px;") +
+                        button#copyPioDel.btn.btn-danger.btn-remove.btn-sm.position-absolute.left-0.p-1(style="right:-19px;top:35px;") -
 
-                        .col-2.col-lg-2.pl-0
+                        .col-6.col-lg-2.pl-0
                             label PIO:
                             select.form-control
                                 option(selected='1') PIO 1
                                 option(value='2') PIO 2
                                 option(value='3') PIO 3
                                 option(value='4') PIO 4
-                        .col-3.col-lg-2
-                            label.text-left Delay (ms)
-                            input(type="number", placesholder="100").form-control
-                        .col-3.col-lg-2
-                            label.text-left Duration (ms)
-                            input(type="number", placesholder="100").form-control
-                        .col-3.col-lg-2
-                            label.text-left Repetition (ms)
-                            input(type="number", placesholder="100").form-control
+                                option(value='5') PIO 5
+                                option(value='6') PIO 6
+                                option(value='7') PIO 7
+                                option(value='8') PIO 8
+                                option(value='9') PIO 9
+                                option(value='10') PIO 10
+                                option(value='11') PIO 11
+                                option(value='12') PIO 12
+                                option(value='13') PIO 13
+                                option(value='14') PIO 14
+                                option(value='15') PIO 15
+                                option(value='16') PIO 16
+                                option(value='17') PIO 17
+                                option(value='18') PIO 18
+                                option(value='19') PIO 19
+                                option(value='20') PIO 20
+                                option(value='21') PIO 21
+                                option(value='22') PIO 22
+                                option(value='23') PIO 23
+                                option(value='24') PIO 24
+                                option(value='25') PIO 25
+                                option(value='26') PIO 26
+                        .col-12.col-lg-10
+                            .row.border.border-primary.position-relative.py-3.pb-3.mb-3
+                                button#copyPar.btn.btn-primary.btn-add.btn-sm.position-absolute.left-0.p-1(style="right:30px;top:-10px;") +
+                                button#copyParDel.btn.btn-danger.btn-remove.btn-sm.position-absolute.left-0.p-1(style="right:10px;top:-10px;") -
+
+                                .col.col-lg-4
+                                    label.text-left Delay (ms)
+                                    input(type="number", placeholder="100").form-control
+                                .col.col-lg-4
+                                    label.text-left Duration (ms)
+                                    input(type="number", placeholder="100").form-control
+                                .col.col-lg-4
+                                    label.text-left Repetition (ms)
+                                    input(type="number", placeholder="100").form-control
+
+                button.btn.btn-primary.btn-lg GENERATE
+
+        script(src='js/testing-gpio.js' charset='utf-8')
