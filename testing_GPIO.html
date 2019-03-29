@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Testing GPIO</title>
+    <meta content="initial-scale=1" name="viewport">
+    <!-- STYLES-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!--link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')-->
+    <!--link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')-->
+    <!--link(rel='stylesheet' href='fonts/Xolonium/Xolonium.css')-->
+    <link rel="stylesheet" href="fonts/DJBGetDigital/DJBGetDigital.css">
+    <!-- SCRIPTS-->
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/popper.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    <div class="container pb-5 DJBGetDigital">
+      <h1 class="text-center my-3 text-white">PIO TESTER</h1>
+      <div class="row border border-primary p-4">
+        <h2 class="h4">iteration</h2>
+        <div class="form-group col-12 border border-primary p-3">
+          <label class="text-left">Message</label>
+          <textarea class="msgSend form-control w-100" rows="2"></textarea>
+        </div>
+        <div class="col-12 form-group">
+          <div class="row border border-primary p-3 position-relative">
+            <div class="col-6 col-lg-3 pl-0">
+              <label class="text-left">Variable</label>
+              <input class="form-control" type="text" placeholder="Video">
+            </div>
+            <div class="col-6 col-lg-3 pl-0">
+              <label class="text-left">Valor</label>
+              <input class="form-control" type="text" placeholder="video4.avi">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 form-group">
+          <div class="row border border-primary position-relative mb-3 px-3 pt-3">
+            <button class="btn btn-primary btn-add btn-sm position-absolute left-0 p-1" id="copyPio" style="right:-20px;top:-2px;">+</button>
+            <button class="btn btn-danger btn-remove btn-sm position-absolute left-0 p-1" id="copyPioDel" style="right:-19px;top:35px;">-</button>
+            <div class="col-6 col-lg-2 pl-0">
+              <label>PIO:</label>
+              <select class="form-control">
+                <option selected="1">PIO 1</option>
+                <option value="2">PIO 2</option>
+                <option value="3">PIO 3</option>
+                <option value="4">PIO 4</option>
+                <option value="5">PIO 5</option>
+                <option value="6">PIO 6</option>
+                <option value="7">PIO 7</option>
+                <option value="8">PIO 8</option>
+                <option value="9">PIO 9</option>
+                <option value="10">PIO 10</option>
+                <option value="11">PIO 11</option>
+                <option value="12">PIO 12</option>
+                <option value="13">PIO 13</option>
+                <option value="14">PIO 14</option>
+                <option value="15">PIO 15</option>
+                <option value="16">PIO 16</option>
+                <option value="17">PIO 17</option>
+                <option value="18">PIO 18</option>
+                <option value="19">PIO 19</option>
+                <option value="20">PIO 20</option>
+                <option value="21">PIO 21</option>
+                <option value="22">PIO 22</option>
+                <option value="23">PIO 23</option>
+                <option value="24">PIO 24</option>
+                <option value="25">PIO 25</option>
+                <option value="26">PIO 26</option>
+              </select>
+            </div>
+            <div class="col-12 col-lg-10">
+              <div class="row border border-primary position-relative py-3 pb-3 mb-3">
+                <button class="btn btn-primary btn-add btn-sm position-absolute left-0 p-1" id="copyPar" style="right:30px;top:-10px;">+</button>
+                <button class="btn btn-danger btn-remove btn-sm position-absolute left-0 p-1" id="copyParDel" style="right:10px;top:-10px;">-</button>
+                <div class="col col-lg-4">
+                  <label class="text-left">Delay (ms)</label>
+                  <input class="form-control" type="number" placeholder="100">
+                </div>
+                <div class="col col-lg-4">
+                  <label class="text-left">Duration (ms)</label>
+                  <input class="form-control" type="number" placeholder="100">
+                </div>
+                <div class="col col-lg-4">
+                  <label class="text-left">Repetition (ms)</label>
+                  <input class="form-control" type="number" placeholder="100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg">GENERATE</button>
+      </div>
+    </div>
+    <script src="js/testing-gpio.js" charset="utf-8"></script>
+  </head>
+</html>

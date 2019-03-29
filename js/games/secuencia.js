@@ -1,34 +1,4 @@
-.btn-alien-group.container.d-flex.align-items-center
-  .row.w-100
-    .col-md-12.font-FAM-Code
-      .row.mb-4
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 8
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster v
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 9
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster r
-      .row.mb-5
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 6
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 7
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster e
-        .col-3
-          button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster P
-
-    .col-md-8.text-center.d-flex.align-items-start.flex-column.mx-auto
-        .border.border-primary.py-4.w-100.access-msg.font-FAM-Code.mb-4
-            input.form-control.form-control-lg.form-control-alien(type='text', placeholder='PASSWORD')
-        .border.border-primary.py-4.mb-auto.w-100
-            h1
-              include _mensaje.txt
-
-script.
-  $(document).ready(function () {
+$(document).ready(function () {
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     var inputNode = $(".form-control-alien");
     correcto = 0;
@@ -42,7 +12,7 @@ script.
       if (correcto == 0) {
         $("body").removeClass("incorrecto");
         symbolError = true;
-        
+
         function animAndHide(uno) {
             uno.prop('disabled', true);
             uno.animateCss("bounceOut", function() {
@@ -90,7 +60,7 @@ script.
             inputNode.attr("placeholder", "ERROR");
             inputNode.val("");
             audioError.play();
-        }  
+        }
       }
     };
   });

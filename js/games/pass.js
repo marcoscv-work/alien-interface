@@ -1,37 +1,4 @@
-.container-800-480.container.d-flex.align-items-center
-  .row
-    .col-md-7
-      .row.mb-4
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 1
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 2
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 3
-      .row.mb-4
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 4
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 5
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 6
-      .row
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 7
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 8
-        .col-4
-          button.btn.btn-alien-xl.btn-outline-primary 9
-    .col-md-5.text-center.d-flex.align-items-start.flex-column
-      .border.border-primary.py-4.mb-auto.w-100
-        h1 1. Validación primer paso 
-          strong.mt-4.d-block PASSWORD
-          //include _mensaje.txt
-      .border.border-primary.py-4.w-100.access-msg
-        input.form-control.form-control-lg.form-control-alien(type='text', placeholder='PASSWORD')
-
-script.
-  $(document).ready(function () {
+$(document).ready(function () {
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     var inputNode = $(".form-control-alien");
     pulsable = 0;
@@ -87,4 +54,4 @@ script.
         }
       }
     };
-  });
+});

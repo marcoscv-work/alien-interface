@@ -20,6 +20,32 @@ html
         script(src='js/bootstrap.min.js' charset='utf-8')
         script(src='js/main.js' charset='utf-8')
 
-        include includes/_alien_symbol.pug
+        .btn-alien-group.container.d-flex.align-items-center
+            .row.w-100
+                .col-md-12.font-FAM-Code
+                    .row.mb-4
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 8
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster v
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 9
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster r
+                    .row.mb-5
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 6
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster 7
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster e
+                        .col-3
+                            button.btn.btn-alien-xl.btn-outline-primary.rounded-circle.faster P
 
-        //.interferencia
+                    .col-md-8.text-center.d-flex.align-items-start.flex-column.mx-auto
+                        .border.border-primary.py-4.w-100.access-msg.font-FAM-Code.mb-4
+                            input.form-control.form-control-lg.form-control-alien(type='text', placeholder='PASSWORD')
+                        .border.border-primary.py-4.mb-auto.w-100
+                            h1 TITULO
+
+        script(src='js/games/secuencia.js' charset='utf-8')
