@@ -9,6 +9,16 @@ $(".msgSend").on('change keyup paste', function() {
     msgRefresh();
 });
 
+$("#enviarTotal").on('click', function() {
+    enviarTablet();
+});
+
+var enviarTablet = function() {
+    var text = $("#msgSend").val();
+    console.log(text);
+    Client.send({display: text});
+}
+
 $(".remove-text").on('click', function() {
     $(".msgSend").val('');
     msgRefresh();
@@ -21,6 +31,7 @@ $(".list-group-alien .btn-primary").on('click', function() {
     var text = $(".list-group-alien .list-group-item:hover span").text();
     $(".msgSend").val(text);
     msgRefresh();
+    enviarTablet();
 });
 
 //botón editar > abre modal con edición
@@ -47,3 +58,5 @@ var saveIPs = async function() {
 
     Client = await ClueClient.connect(HTTP+IP1+':'+port1);
 }
+
+saveIPs();

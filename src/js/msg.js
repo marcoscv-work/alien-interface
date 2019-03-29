@@ -11,43 +11,44 @@ $('#videoSin').click(function() {
 });
 
 function maquina(texto, intervalo) {
-longitud = texto.length;
+    longitud = texto.length;
 
-//Adaptamos tamaño de texto según longitud de mensaje
-if (longitud > 110) {
-    $('#maquina').removeClass('h1');
-    $('#maquina').removeClass('display-4');
-    $('#maquina').addClass('h2');
-    console.log('fuente h2');
-} else if (longitud < 50) {
-    $('#maquina').removeClass('h2');
-    $('#maquina').removeClass('h1');
-    $('#maquina').addClass('display-4');
-    console.log('fuente ENORME');
-} else {
-    $('#maquina').removeClass('h2');
-    $('#maquina').removeClass('display-4');
-    $('#maquina').addClass('h1');
-    console.log('fuente h1');
-}
+    //Adaptamos tamaño de texto según longitud de mensaje
+    if (longitud > 110) {
+        $('#maquina').removeClass('h1');
+        $('#maquina').removeClass('display-4');
+        $('#maquina').addClass('h2');
+        console.log('fuente h2');
+    } else if (longitud < 50) {
+        $('#maquina').removeClass('h2');
+        $('#maquina').removeClass('h1');
+        $('#maquina').addClass('display-4');
+        console.log('fuente ENORME');
+    } else {
+        $('#maquina').removeClass('h2');
+        $('#maquina').removeClass('display-4');
+        $('#maquina').addClass('h1');
+        console.log('fuente h1');
+    }
 
-nodo =  $('#maquina')[0];
-nodo.innerHTML = "";
+    nodo =  $('#maquina')[0];
+    nodo.innerHTML = "";
 
-var i = 0;
-// Creamos el timer
-timer = setInterval(function(){
-// Vamos añadiendo letra por letra y la _ al final.
-nodo.innerHTML = nodo.innerHTML.substr(0,nodo.innerHTML.length-1) + texto.charAt(i) + " ";
+    var i = 0;
+    // Creamos el timer
+    timer = setInterval(function(){
+        // Vamos añadiendo letra por letra y la _ al final.
+        nodo.innerHTML = nodo.innerHTML.substr(0,nodo.innerHTML.length-1) + texto.charAt(i) + " ";
 
-if (i >= longitud){
-    clearInterval(timer);
-    // Salimos del Timer y quitamos la barra baja (_)
-    //nodo.innerHTML = nodo.innerHTML.substr(0,longitud);
-    return true;
-} else {
-    i++;
-    }},intervalo);
+        if (i >= longitud){
+            clearInterval(timer);
+            // Salimos del Timer y quitamos la barra baja (_)
+            //nodo.innerHTML = nodo.innerHTML.substr(0,longitud);
+            return true;
+        } else {
+            i++;
+        }
+    },intervalo);
 };
 
 // TEMP

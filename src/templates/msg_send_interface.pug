@@ -34,7 +34,7 @@ html
                             .form-group.col-12.col-sm-7.col-md-8.col-lg-9.pr-md-0
                                 textarea#msgSend(rows="4").msgSend.form-control.w-100
                             .form-group.col-sm-5.col-md-4.col-lg-3.text-center
-                                .btn.btn-primary.btn-block.btn-lg.py-3
+                                #enviarTotal.btn.btn-primary.btn-block.btn-lg.py-3
                                     i.far.fa-share-square.d-none.d-xl-inline
                                     span.ml-lg-2 ENVIAR
                                 .d-flex.mt-2.w-100
@@ -145,8 +145,8 @@ html
                         .form-row
                             .col.col-md-2
                                 input.form-control#HTTP1(type='text' placeholder='http://' value='http://')
-                            .col-7.col-md-3
-                                input.form-control#IP1(type='text' placeholder='192.168.x.xx' value='192.168.50.187')
+                            .col-7.col-md-4
+                                input.form-control#IP1(type='text' placeholder='192.168.x.xx' value='raspberrypitablet.local')
                             .col.col-md-2
                                 input.form-control#port1(type='text' placeholder='3000' value='3000')
                         //- label.mt-4(for='IP') ID de dipositivo 2 que recibe notificaciones

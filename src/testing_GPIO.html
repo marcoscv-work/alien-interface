@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Testing GPIO</title>
+    <meta content="initial-scale=1" name="viewport">
+    <!-- STYLES-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--link(rel='stylesheet' href='css/animate.min.css')-->
+    <!--link(rel='stylesheet' href='fonts/fontawesome-free/css/all.css')-->
+    <!--link(rel='stylesheet' href='fonts/moonhouse/moonhouse.css')-->
+    <!--link(rel='stylesheet' href='fonts/Xolonium/Xolonium.css')-->
+    <link rel="stylesheet" href="fonts/DJBGetDigital/DJBGetDigital.css">
+    <!-- SCRIPTS-->
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/popper.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/clue-client.js" charset="utf-8"></script>
+    <div class="container pb-5 DJBGetDigital">
+      <h1 class="text-center my-3 text-white">PIO TESTER</h1>
+      <div class="row border border-primary p-4 position-relative">
+        <h2 class="h4">iteration 01</h2>
+        <button class="btn btn-primary btn-sm position-absolute left-0 p-1" style="right:-5px;top:-5px;">+</button>
+        <div class="form-group col-12 border border-primary p-3">
+          <label class="text-left">Message</label>
+          <textarea class="msgSend form-control w-100" rows="2"></textarea>
+        </div>
+        <div class="col-12 form-group">
+          <div class="row border border-primary p-4 position-relative">
+            <div class="col-2 col-lg-3 pl-0">
+              <label class="text-left">Variable</label>
+              <input class="form-control" type="text" placesholder="Video">
+            </div>
+            <div class="col-2 col-lg-3 pl-0">
+              <label class="text-left">Valor</label>
+              <input class="form-control" type="text" placesholder="video4.avi">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 form-group">
+          <div class="row border border-primary p-4 position-relative">
+            <button class="btn btn-primary btn-sm position-absolute left-0 p-1" style="right:-5px;top:-5px;">+</button>
+            <div class="col-2 col-lg-2 pl-0">
+              <label>PIO:</label>
+              <select class="form-control">
+                <option selected="1">PIO 1</option>
+                <option value="2">PIO 2</option>
+                <option value="3">PIO 3</option>
+                <option value="4">PIO 4</option>
+              </select>
+            </div>
+            <div class="col-3 col-lg-2">
+              <label class="text-left">Delay (ms)</label>
+              <input class="form-control" type="number" placesholder="100">
+            </div>
+            <div class="col-3 col-lg-2">
+              <label class="text-left">Duration (ms)</label>
+              <input class="form-control" type="number" placesholder="100">
+            </div>
+            <div class="col-3 col-lg-2">
+              <label class="text-left">Repetition (ms)</label>
+              <input class="form-control" type="number" placesholder="100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </head>
+</html>
