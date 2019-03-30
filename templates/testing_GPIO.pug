@@ -87,6 +87,15 @@ html
                                     label.text-left Repetition (ms)
                                     input(type="number", placeholder="100").form-control
 
-                button.btn.btn-primary.btn-lg GENERATE
+                button.btn.btn-primary.btn-lg.btn-generate GENERATE
+
+        #modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-lg.modal-dialog-centered
+                .modal-content.bg-secondary.text-primary
+                    .modal-header
+                        h5.modal-title EXPORT
+                        button.close.text-primary(type='button' data-dismiss='modal' aria-label='Close')
+                            span(aria-hidden='true') &times;
+                    .modal-body
 
         script(src='js/testing-gpio.js' charset='utf-8')
