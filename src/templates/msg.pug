@@ -18,11 +18,12 @@ html
         script(src='js/popper.min.js' charset='utf-8')
         script(src='js/bootstrap.min.js' charset='utf-8')
         script(src='js/main.js' charset='utf-8')
+        script(src='js/clue-raspberry.js' charset='utf-8')
 
         .container.container-800-480.p-0
             video#videoSin(width='800' height='480' loop='' controls='none' autoplay='')
                 source(src='videos/sin_v01.mp4' type='video/mp4')
-            video.p-2.hide#videoRadar(width='800' height='250' loop='' controls='none' autoplay='' style='pointer-events: none;')
+            video.hide#videoRadar(width='800' height='250' loop='' controls='none' autoplay='' style='pointer-events: none;')
                 source(src='videos/videoLo.mp4' type='video/mp4')
 
             p.hide.h1.px-5.text-center#maquina
